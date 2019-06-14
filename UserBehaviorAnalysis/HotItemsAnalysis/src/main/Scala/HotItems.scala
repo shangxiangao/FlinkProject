@@ -37,8 +37,8 @@ object HotItems {
     env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
     env.setParallelism(1)
     val stream = env
-      //.readTextFile("/Users/xiaohuanggua/git/UserBehaviorAnalysis/HotItemsAnalysis/src/main/resources/UserBehavior.csv")
-      .addSource( new FlinkKafkaConsumer[String]("hotitems", new SimpleStringSchema(), properties) )
+      .readTextFile("/Users/xiaohuanggua/git/BigData/UserBehaviorAnalysis/HotItemsAnalysis/src/main/resources/UserBehavior.csv")
+      //.addSource( new FlinkKafkaConsumer[String]("hotitems", new SimpleStringSchema(), properties) )
       .map(line => {
         val linearray = line.split(",")
         UserBehavior(linearray(0).toLong, linearray(1).toLong,linearray(2).toInt, linearray(3),linearray(4).toLong)

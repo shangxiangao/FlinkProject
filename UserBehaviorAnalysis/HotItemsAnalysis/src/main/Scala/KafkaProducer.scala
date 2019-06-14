@@ -14,7 +14,7 @@ object KafkaProducer {
     props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
     props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
     val producer = new KafkaProducer[String, String](props)
-    val bufferedSource = io.Source.fromFile("/Users/xiaohuanggua/git/UserBehaviorAnalysis/HotItemsAnalysis/src/main/resources/UserBehavior.csv")
+    val bufferedSource = io.Source.fromFile("/Users/xiaohuanggua/git/BigData/UserBehaviorAnalysis/HotItemsAnalysis/src/main/resources/UserBehavior.csv")
     for (line <- bufferedSource.getLines) {
       val record = new ProducerRecord[String, String](topic, line)
       producer.send(record)
