@@ -14,6 +14,7 @@
         <module>LoginFailDetect</module>
         <module>OrderTimeoutDetect</module>
         <module>HotItemsAnalysis</module>
+        <module>LoginFailDetect</module>
     </modules>
 
     <properties>
